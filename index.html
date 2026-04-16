@@ -85,13 +85,24 @@
         
         .profile-info-group { flex: 1; text-align: left; min-width: 320px; }
         .c-agent-tag { font-size: 15px; font-weight: 800; color: #94a3b8; margin-bottom: 10px; display: block; letter-spacing: 0.1em; }
-        .c-name-main { font-size: 42px !important; font-weight: 900; color: #0f172a; margin-bottom: 20px !important; letter-spacing: -0.05em; display: flex; align-items: center; flex-wrap: wrap; gap: 10px; line-height: 1.2; }
-        .c-name-main span { font-size: 22px; font-weight: 900; color: #0f172a; }
         .c-reg-number { font-size: 20px; font-weight: 700; color: #475569; margin-bottom: 25px; }
         .c-slogan-text { font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800; }
 
         .c-photo-frame-ultra { width: 250px; height: 320px; border-radius: 15px; overflow: hidden; border: 1px solid #eee; flex-shrink: 0; background: #f8fafc; box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
         .c-photo-frame-ultra img { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05); }
+
+        /* 이미지 스타일링을 위한 성함 박스 */
+        .c-image-name-box { 
+            color: #1e293b; 
+            font-weight: 800; 
+            line-height: 1.3; 
+            margin-bottom: 25px; 
+            text-align: left;
+        }
+        .c-image-name-box .line-1 { font-size: 19px; color: #64748b; } 
+        .c-image-name-box .line-2 { font-size: 38px; font-weight: 900; margin: 4px 0; color: #0f172a; } 
+        .c-image-name-box .line-3 { font-size: 19px; display: flex; align-items: center; gap: 8px; color: #1e293b; }
+        .c-image-name-box .line-3 .dw-logo { color: #b8860b; font-weight: 900; font-family: 'Times New Roman', serif; font-style: italic; font-size: 24px; letter-spacing: -1px; }
 
         /* 하단 액션 패널 */
         .counselor-action-disclosure-pane { 
@@ -109,9 +120,6 @@
         .action-btn-unified.kakao-btn:hover { background: #f4dc00; transform: translateY(-3px); }
         .action-btn-unified.phone-btn { background: #0052ff; color: #fff !important; margin-bottom: 40px; box-shadow: 0 12px 30px rgba(0, 82, 255, 0.15); }
         .action-btn-unified.phone-btn:hover { background: #003db3; transform: translateY(-3px); }
-
-        .disclosure-list-v42 { padding-top: 15px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #94a3b8; line-height: 1.7; }
-        .disclosure-list-v42 p { margin-bottom: 8px; position: relative; padding-left: 12px; }
 
         /* 히어로 섹션 */
         .hero-box { position: relative; width: 100%; height: 750px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -154,7 +162,8 @@
             .prod-reserve-grid { grid-template-cols: 1fr; }
             .card-inner-flex { flex-direction: column-reverse; text-align: center; padding: 30px; }
             .profile-info-group { text-align: center; min-width: 100%; }
-            .c-name-main { justify-content: center; font-size: 32px !important; }
+            .c-image-name-box { text-align: center; margin-bottom: 20px; }
+            .c-image-name-box .line-3 { justify-content: center; }
             .counselor-action-disclosure-pane { padding: 40px 25px; }
             .content-body { margin-top: 115px; }
         }
@@ -195,7 +204,7 @@
         </div>
     </header>
 
-    <!-- [상품 상세 안내 모달] - 기존 상세 데이터 복구 완료 -->
+    <!-- [상품 상세 안내 모달] -->
     <div id="productDetailModal" class="modal-overlay-bp">
         <div class="modal-body-bp">
             <div class="flex justify-between items-center mb-8 border-b pb-4 text-left">
@@ -255,10 +264,6 @@
                         기타 자세한 내용은 1544-8811로 문의하시거나 대출상품설명서를 참조하시기 바랍니다.
                     </td>
                 </tr>
-                <tr>
-                    <th style="background:#f8fafc; font-weight:800; color:#1e293b; border-bottom: 1px solid #e2e8f0; width: 140px; padding: 18px 25px;">심의필번호</th>
-                    <td style="color: #94a3b8; font-size: 12px; border-bottom: 1px solid #e2e8f0; padding: 18px 25px; text-align: left;">동원제일저축은행 준법감시인 심의필 제2026-044호(2026.04.10~2027.04.09)</td>
-                </tr>
             </table>
             <button onclick="closeProductModal()" style="width:100%; padding:18px; background:#1e293b; color:white; border:none; border-radius:15px; font-weight:700; font-size:16px; cursor:pointer; margin-top:20px;">내용 확인 완료</button>
         </div>
@@ -280,7 +285,11 @@
                         <div class="card-inner-flex">
                             <div class="profile-info-group">
                                 <span class="c-agent-tag uppercase">Professional Agent</span>
-                                <h3 class="c-name-main">전문상담사 장미이 <span>(대출상담사 등록확인)</span></h3>
+                                <div class="c-image-name-box">
+                                    <p class="line-1">대출모집법인 (주)베스트플러스</p>
+                                    <p class="line-2">대출상담사 장미이</p>
+                                    <p class="line-3">동원제일저축은행 <span class="dw-logo">DW</span></p>
+                                </div>
                                 <div class="c-reg-number">저축은행중앙회 등록번호 : 10-00047555</div>
                                 <p class="c-slogan-text">
                                     정직함과 전문성으로 고객님의 소중한 자산을<br>
@@ -300,12 +309,6 @@
                         <a href="tel:010-9966-3599" class="action-btn-unified phone-btn">
                             <i class="fas fa-phone-alt"></i> 전문 상담사 전화 바로 연결 <span class="sub-t">(전화상담 09~18시)</span>
                         </a>
-                        <div class="disclosure-list-v42">
-                            <p>- (주) 베스트플러스는 동원제일저축은행과 대출모집업무 위탁계약을 체결한 대출모집법인이며, 저축은행중앙회에 등록된 대출모집법인입니다.</p>
-                            <p>- 장미이 상담사는 동원제일저축은행과 대출모집업무 위탁계약을 체결한 (주) 베스트플러스에 소속된 저축은행중앙회 등록 대출상담사입니다.</p>
-                            <p>- 대출모집법인 (주) 베스트플러스는 동원제일저축은행만의 대출상품을 판매·대리·중개하며, 대출계약체결권은 동원제일저축은행에 있습니다.</p>
-                            <p>- 대출모집인은 고객에게 별도의 수수료를 요구·수취할 수 없으며, 수수료율은 동원제일저축은행 홈페이지(https://www.dongwonjeilbank.kr/)내 `대출모집인 수수료` 화면에서 확인할 수 있습니다.</p>
-                        </div>
                     </div>
 
                 </div>
@@ -402,21 +405,20 @@
                 <div class="w-full text-left">
                     <h2 class="font-black text-3xl mb-8">(주)베스트플러스</h2>
                     <div class="uniform-footer-text">
-                        <p>-(주)베스트플러스는 동원제일저축은행과 여신수탁을 체결하고 저축은행중앙회에 등록된 대출법인입니다.</p>
-                        <p>-(주)베스트플러스는 동원제일저축은행 하나의 저축은행만 대리하고 있으며 금융상품 결제권을 부여받지 않아 계약체결 권한이 없습니다.</p>
                         <p>-금융소비자가 제공한 신용정보 또는 개인정보는 금융상품 직접판매업자가 보유, 관리합니다.</p>
+                        <p>-장미이 상담사는 동원제일저축은행과 대출모집업무 위탁계약을 체결한 (주)베스트플러스에 소속된 저축은행중앙회에 등록된 대출상담사 입니다.</p>
                         <p>-대출 전후 수수료를 요구하는 것은 불법입니다. 동원제일저축은행과 (주)베스트플러스는 고객에게 중개수수료를 요구하거나 받지 않습니다.</p>
                         <p>-과도한 대출은 개인신용평점 하락의 제약 또는 불이익이 발생할 수 있습니다.</p>
                         <p>-개인신용 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.</p>
                         <p>-연체 시 계약기간 만료 전 변제의무가 발생할 수 있습니다.</p>
                         <p>-계약 체결 전 상품설명서 및 약관을 확인하시기 바랍니다.</p>
                         <p>-해당 상품에 대한 충분한 사전 설명을 받을 권리가 있으며, 설명을 이해한 후 거래하시기 바랍니다.</p>
-                        <p>-동원제일저축은행 준법감시인 심의필 제2026-044호(2026.04.10~2027.04.09)</p>
+                        <p>동원제일저축은행 준법감시인 심의필 제2026-000호(2026.00.00~2027.00.00)</p>
                         <p>-동원제일저축은행의 대출모집인 수수료율은 동원제일저축은행 홈페이지(https://www.dongwonjeilbank.kr/)내 `대출모집인 수수료` 화면에서 확인할수 있습니다.</p>
                         <p>-(주)베스트플러스 대출모집인 포탈사이트(https://bestplus.kr/) 및 저축은행 중앙회(02-397-8600)에서 확인 가능합니다.</p>
                         <p>-민원창구:동원제일저축은행 1544-8811</p>
                         <p>-상호명 : (주)베스트플러스 | 사업자번호 : 627-81-02044 | 본등록번호 20-00001351</p>
-                        <p>-대표자 : 장미이 | 모집업체 대표번호 : 070-8290-5023</p>
+                        <p>대표자 및 대출상담사: 장미이 / 대출모집인 등록번호 : 10-0010791 / 모집업체 대표번호: 070-8290-5023</p>
                         <p>-주소 : 경기도 의정부시 시민로29, 3층 308호</p>
                         <p>-등록기관 : 저축은행중앙회 | 금감원 : 1332</p>
                     </div>
