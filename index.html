@@ -152,6 +152,10 @@
         .spec-table-master th { background: #f8fafc; padding: 18px 25px; border: 1px solid #e2e8f0; font-weight: 800; color: #1e293b; width: 140px; }
         .spec-table-master td { padding: 18px 25px; border: 1px solid #e2e8f0; color: #475569; line-height: 1.8; word-break: break-all; }
 
+        /* [5. 등록증 모달 전용 레이아웃 - 타이틀 제거 상태] */
+        #licenseModal.modal-overlay-bp { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 20000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        #licenseModal .modal-body-bp { background: white; padding: 30px; border-radius: 30px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 40px 100px rgba(0,0,0,0.2); text-align: center; position: relative; }
+
         /* 푸터 */
         #bp_footer_main { padding: 100px 0; background-color: #fff; border-top: 1px solid #f3f4f6; text-align: left; }
         .uniform-footer-text p { font-size: 13.5px !important; color: #6b7280; line-height: 1.6; margin-bottom: 4px !important; text-align: left; }
@@ -270,6 +274,20 @@
                 </tr>
             </table>
             <button onclick="closeProductModal()" style="width:100%; padding:18px; background:#1e293b; color:white; border:none; border-radius:15px; font-weight:700; font-size:16px; cursor:pointer; margin-top:20px;">내용 확인 완료</button>
+        </div>
+    </div>
+
+    <!-- [등록증 보기 모달] (타이틀 글자 원본 규격에 맞추어 완전 제거) -->
+    <div id="licenseModal" class="modal-overlay-bp">
+        <div class="modal-body-bp">
+            <div class="flex justify-between items-center mb-4 border-b pb-2 text-left">
+                <h3 style="font-size:20px; font-weight:900; color:#0f172a;"></h3>
+                <button onclick="closeLicenseModal()" style="font-size:24px; color:#94a3b8;"><i class="fas fa-times"></i></button>
+            </div>
+            <div style="width: 100%; overflow: hidden; border-radius: 15px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                <img src="https://i.ifh.cc/1V9gwY.jpg" alt="등록증" style="width: 100%; height: auto; display: block;" onerror="this.onerror=null; this.src='https://placehold.co/400x600?text=License+Image';">
+            </div>
+            <button onclick="closeLicenseModal()" style="width:100%; padding:15px; background:#1e293b; color:white; border:none; border-radius:15px; font-weight:700; font-size:16px; cursor:pointer;">닫기</button>
         </div>
     </div>
 
@@ -403,7 +421,7 @@
             </div>
         </section>
 
-        <!-- 푸터 영역 -->
+        <!-- [푸터 영역 - 주소 링크 전용 검정색 적용 완료] -->
         <footer id="bp_footer_main">
             <div class="bp-container flex-col">
                 <div class="w-full text-left">
@@ -425,7 +443,8 @@
                         <p>-민원창구:동원제일저축은행 1544-8811</p>
                         <p>-상호명 : (주)베스트플러스 | 사업자번호 : 627-81-02044 | 본등록번호 20-00001351</p>
                         <p>대표자 및 대출상담사: 장미이 / 대출모집인 등록번호 : 10-00047555 / 모집업체 대표번호: 070-8290-5023</p>
-                        <p>-주소 : 경기도 의정부시 시민로29, 3층 308호</p>
+                        <!-- 주소지 링크만 깔끔하게 완전 검정색(text-black / #000000)으로 설정했습니다 -->
+                        <p>-주소 : 경기도 의정부시 시민로29, 3층 308호 <a href="javascript:void(0)" onclick="openLicenseModal()" class="text-black hover:underline font-bold" style="color: #000000; margin-left: 5px;">[판매대리 등록증보기]</a></p>
                         <p>-등록기관 : 저축은행중앙회 | 금감원 : 1332</p>
                         <p>-모집인 및 방문판매원 조회: <a href="https://loanconsultant.or.kr/loan_main.do" target="_blank" class="text-black hover:underline font-bold" style="color: #000000;">[은행연합회 조회서비스]</a></p>
                     </div>
@@ -442,6 +461,9 @@
 <script>
     function openProductModal() { document.getElementById('productDetailModal').style.display = 'flex'; }
     function closeProductModal() { document.getElementById('productDetailModal').style.display = 'none'; }
+
+    function openLicenseModal() { document.getElementById('licenseModal').style.display = 'flex'; }
+    function closeLicenseModal() { document.getElementById('licenseModal').style.display = 'none'; }
 
     window.onload = function() {
         const v = document.getElementById('mainVideo');
