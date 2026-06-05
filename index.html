@@ -7,6 +7,7 @@
     <!-- 외부 라이브러리: Tailwind CSS, Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         
@@ -129,10 +130,10 @@
         .hero-title-main { font-size: 64px !important; font-weight: 900 !important; color: #0f172a; margin-bottom: 40px !important; letter-spacing: -0.04em; }
 
         /* 상품 카드 섹션 */
-        .prod-reserve-grid { display: grid; grid-template-cols: 1fr 1fr; gap: 40px; margin-top: 60px; }
+        .prod-reserve-grid { display: flex; flex-direction: column; gap: 80px; margin-top: 60px; max-width: 900px; width: 100%; margin-left: auto; margin-right: auto; }
         .prod-card { background: white; border-radius: 60px; overflow: hidden; border: 1px solid #edf2f7; transition: 0.5s; box-shadow: 0 20px 50px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
         .prod-card:hover { transform: translateY(-10px); box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
-        .color-zoom-img { width: 100%; height: 350px; object-fit: cover; transition: 0.8s; filter: grayscale(100%); }
+        .color-zoom-img { width: 100%; height: 400px; object-fit: cover; transition: 0.8s; filter: grayscale(100%); }
         .prod-card:hover .color-zoom-img { transform: scale(1.08); filter: grayscale(0%); }
         
         .p-label { display: inline-block; font-size: 11px; font-weight: 900; color: #0052ff; background: #eff6ff; padding: 6px 14px; border-radius: 8px; letter-spacing: 0.1em; }
@@ -152,10 +153,6 @@
         .spec-table-master th { background: #f8fafc; padding: 18px 25px; border: 1px solid #e2e8f0; font-weight: 800; color: #1e293b; width: 140px; }
         .spec-table-master td { padding: 18px 25px; border: 1px solid #e2e8f0; color: #475569; line-height: 1.8; word-break: break-all; }
 
-        /* [5. 등록증 모달 전용 레이아웃 - 타이틀 제거 상태] */
-        #licenseModal.modal-overlay-bp { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 20000; display: none; align-items: center; justify-content: center; padding: 20px; }
-        #licenseModal .modal-body-bp { background: white; padding: 30px; border-radius: 30px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 40px 100px rgba(0,0,0,0.2); text-align: center; position: relative; }
-
         /* 푸터 */
         #bp_footer_main { padding: 100px 0; background-color: #fff; border-top: 1px solid #f3f4f6; text-align: left; }
         .uniform-footer-text p { font-size: 13.5px !important; color: #6b7280; line-height: 1.6; margin-bottom: 4px !important; text-align: left; }
@@ -163,7 +160,6 @@
         @media (max-width: 1024px) {
             .hero-title-main { font-size: 38px !important; }
             .nav-menu, .logo-sub-box, .logo-v-divider { display: none; }
-            .prod-reserve-grid { grid-template-cols: 1fr; }
             .card-inner-flex { flex-direction: column-reverse; text-align: center; padding: 30px; }
             .profile-info-group { text-align: center; min-width: 100%; }
             .c-image-name-box { text-align: center; margin-bottom: 20px; }
@@ -270,7 +266,7 @@
                 </tr>
                 <tr>
                     <th style="background:#f8fafc; font-weight:800; color:#1e293b; border-bottom: 1px solid #e2e8f0; width: 140px; padding: 18px 25px;">심의필 번호</th>
-                    <td style="color: #94a3b8; font-size: 12px; border-bottom: 1px solid #e2e8f0; padding: 18px 25px; text-align: left;">동원제일저축은행 준법감시인 심의필 제2026-045호(2026.04.17~2027.04.16)</td>
+                    <td style="color: #94a3b8; font-size: 12px; border-bottom: 1px solid #e2e8f0; padding: 18px 25px; text-align: left;">동원제일저축은행 준법감시인 심의필 제2026-049호(2026.06.01~2027.05.31)</td>
                 </tr>
             </table>
             <button onclick="closeProductModal()" style="width:100%; padding:18px; background:#1e293b; color:white; border:none; border-radius:15px; font-weight:700; font-size:16px; cursor:pointer; margin-top:20px;">내용 확인 완료</button>
@@ -281,11 +277,12 @@
     <div id="licenseModal" class="modal-overlay-bp">
         <div class="modal-body-bp">
             <div class="flex justify-between items-center mb-4 border-b pb-2 text-left">
-                <h3 style="font-size:20px; font-weight:900; color:#0f172a;"></h3>
+                <h3 style="font-size:20px; font-weight:900; color:#0f172a;">판매대리 등록증</h3>
                 <button onclick="closeLicenseModal()" style="font-size:24px; color:#94a3b8;"><i class="fas fa-times"></i></button>
             </div>
             <div style="width: 100%; overflow: hidden; border-radius: 15px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-                <img src="https://i.ifh.cc/1V9gwY.jpg" alt="등록증" style="width: 100%; height: auto; display: block;" onerror="this.onerror=null; this.src='https://placehold.co/400x600?text=License+Image';">
+                <!-- 임시 이미지가 나오는 onerror 부분을 삭제했습니다. -->
+                <img src="https://i.ifh.cc/1V9gwY.jpg" alt="등록증" style="width: 100%; height: auto; display: block;">
             </div>
             <button onclick="closeLicenseModal()" style="width:100%; padding:15px; background:#1e293b; color:white; border:none; border-radius:15px; font-weight:700; font-size:16px; cursor:pointer;">닫기</button>
         </div>
@@ -361,10 +358,10 @@
                 <div class="prod-reserve-grid w-full">
                     <!-- 오토론 -->
                     <div id="autoloan_anchor" class="prod-card" style="border-top: 8px solid #0052ff;">
-                        <div class="card-img-box" style="height:300px; overflow:hidden;">
-                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80" alt="차량" class="w-full h-full object-cover">
+                        <div class="card-img-box" style="height:400px; overflow:hidden;">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80" alt="차량" class="color-zoom-img">
                         </div>
-                        <div style="padding: 50px; text-align:center;">
+                        <div style="padding: 60px; text-align:center;">
                             <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:20px;">
                                 <span class="p-label">BEST AUTO LOAN</span>
                                 <div class="info-btn" onclick="openProductModal()"><i class="fas fa-info-circle"></i> 상품안내</div>
@@ -382,10 +379,10 @@
                     </div>
                     <!-- 아파트 담보 -->
                     <div id="aptloan_anchor" class="prod-card" style="border-top: 8px solid #ca8a04;">
-                        <div class="card-img-box" style="height:300px; overflow:hidden;">
-                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="아파트" class="w-full h-full object-cover">
+                        <div class="card-img-box" style="height:400px; overflow:hidden;">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="아파트" class="color-zoom-img">
                         </div>
-                        <div style="padding: 50px; text-align:center;">
+                        <div style="padding: 60px; text-align:center;">
                             <div class="mb-5">
                                 <span class="p-label gold">PREMIUM MORTGAGE</span>
                             </div>
@@ -421,7 +418,7 @@
             </div>
         </section>
 
-        <!-- [푸터 영역 - 주소 링크 전용 검정색 적용 완료] -->
+        <!-- 푸터 영역 -->
         <footer id="bp_footer_main">
             <div class="bp-container flex-col">
                 <div class="w-full text-left">
@@ -437,13 +434,12 @@
                         <p>-연체 시 계약기간 만료 전 변제의무가 발생할 수 있습니다.</p>
                         <p>-계약 체결 전 상품설명서 및 약관을 확인하시기 바랍니다.</p>
                         <p>-해당 상품에 대한 충분한 사전 설명을 받을 권리가 있으며, 설명을 이해한 후 거래하시기 바랍니다.</p>
-                        <p>동원제일저축은행 준법감시인 심의필 제2026-000호(2026.00.00~2027.00.00)</p>
+                        <p>동원제일저축은행 준법감시인 심의필 제2026-049호(2026.06.01~2027.05.31)</p>
                         <p>-동원제일저축은행의 대출모집인 수수료율은 동원제일저축은행 홈페이지(https://www.dongwonjeilbank.kr/)내 `대출모집인 수수료` 화면에서 확인할수 있습니다.</p>
                         <p>-(주)베스트플러스 대출모집인 포탈사이트(https://bestplus.kr/) 및 저축은행 중앙회(02-397-8600)에서 확인 가능합니다.</p>
                         <p>-민원창구:동원제일저축은행 1544-8811</p>
                         <p>-상호명 : (주)베스트플러스 | 사업자번호 : 627-81-02044 | 본등록번호 20-00001351</p>
                         <p>대표자 및 대출상담사: 장미이 / 대출모집인 등록번호 : 10-00047555 / 모집업체 대표번호: 070-8290-5023</p>
-                        <!-- 주소지 링크만 깔끔하게 완전 검정색(text-black / #000000)으로 설정했습니다 -->
                         <p>-주소 : 경기도 의정부시 시민로29, 3층 308호 <a href="javascript:void(0)" onclick="openLicenseModal()" class="text-black hover:underline font-bold" style="color: #000000; margin-left: 5px;">[판매대리 등록증보기]</a></p>
                         <p>-등록기관 : 저축은행중앙회 | 금감원 : 1332</p>
                         <p>-모집인 및 방문판매원 조회: <a href="https://loanconsultant.or.kr/loan_main.do" target="_blank" class="text-black hover:underline font-bold" style="color: #000000;">[은행연합회 조회서비스]</a></p>
