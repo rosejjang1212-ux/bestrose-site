@@ -1077,7 +1077,7 @@
         </div>
     </div>
 
-    <!-- [모달 4] 햇살론 일반보증 상품상세 팝업 (심의필 제2026-083호) -->
+    <!-- [모달 3] 햇살론 일반보증 상품상세 팝업 (심의서류 원본 100% 반영) -->
     <div id="sunshineDetailModal" class="modal-overlay-bp" onclick="handleOverlayClick(event, 'sunshineDetailModal')">
         <div class="modal-body-bp">
             <div class="flex justify-between items-center mb-5 border-b pb-3 text-left">
@@ -1085,7 +1085,7 @@
                     <span class="p-label orange !mb-0">GOV SUNSHINE</span>
                     <h3 style="font-size:21px; font-weight:900; color:#0f172a;">햇살론 일반보증 상세 안내</h3>
                 </div>
-                <button onclick="closeModal('sunshineDetailModal')" style="font-size:24px; color:#94a3b8;"><i class="fas fa-times"></i></button>
+                <button onclick="closeModal('sunshineDetailModal')" style="font-size:24px; color:#94a3b8;" aria-label="닫기"><i class="fas fa-times"></i></button>
             </div>
             <table class="spec-table-master">
                 <tbody>
@@ -1093,8 +1093,8 @@
                     <tr>
                         <th>상품신청대상</th>
                         <td>
-                            ㆍ연간소득 3,500만원 이하<br>
-                            ㆍ연소득 4,500만원 이하이며 <strong>개인신용평점 하위 20% 이하</strong>인 고객
+                            • 연간소득 3,500만원 이하<br>
+                            • 연소득 4,500만원이하이며 개인신용평점 하위 20% 이하인 고객
                         </td>
                     </tr>
                     <tr><th>대출한도</th><td>최대 1,500만원 이내</td></tr>
@@ -1104,35 +1104,52 @@
                     <tr>
                         <th>대출금리</th>
                         <td>
-                            <strong>연 8% ~ 10%</strong> (변동 금리 / 기준일자 : 매월 1일)<br>
-                            ㆍ대출금리 = 기준금리 + 가산금리(신용점수별 차등 적용)<br>
-                            ㆍ기준금리 : 전전월 저축은행 전체 1년 만기 정기예탁금 가중평균금리(신규취급금액)
+                            <strong>연8%~10%</strong> (변동 금리 / 기준일자: 매월1일)<br>
+                            • 대출금리 = 기준금리 + 가산금리(신용점수별 차등 적용)<br>
+                            • 기준 금리 : 전전월 저축은행 전체 1년 만기 정기예탁금 가중평균금리(신규취급금액)
                         </td>
                     </tr>
-                    <tr><th>연체금리</th><td>대출금리 + 연 3% (법정최고금리 20% 이내)</td></tr>
-                    <tr><th>준비서류</th><td>신분증, 소득증빙자료, 재직확인자료, 기타 저축은행이 요청하는 서류 등</td></tr>
+                    <tr><th>연체금리</th><td>대출금리 + 연3% (법정최고금리 20%이내)</td></tr>
+                    <tr>
+                        <th>준비서류</th>
+                        <td>
+                            신분증, 소득증빙자료, 재직확인자료, 기타 저축은행이 요청하는 서류 등<br>
+                            <span class="text-xs text-gray-500">- 대출심사시 추가 서류가 발생될 수 있음</span>
+                        </td>
+                    </tr>
                     <tr>
                         <th>부대비용</th>
                         <td>
-                            보증금액의 연 2.5% 이내<br>
-                            <strong>① 0.5%p 인하</strong>: 사회적배려대상자<br>
-                            <strong>② 0.1%p 인하</strong>: 서민금융진흥원 신용·부채컨설팅 이수자, 금융교육 이수자, 국민취업지원제도 성공자, 복지멤버십 가입자
+                            보증금액의 연2.5% 이내<br>
+                            <strong>① 0.5%P 인하</strong><br>
+                            - 사회적배려대상자<br>
+                            <strong>② 0.1%P 인하</strong><br>
+                            - 서민금융진흥원 신용 부채컨설팅 이수자<br>
+                            - 서민금융진흥원 금융교육 이수자<br>
+                            - 국민취업지원제도 성공자<br>
+                            - 복지멤버십 가입자<br>
+                            <span class="text-xs text-blue-600 font-bold">※ ①, ② 항목 내 중복 적용 가능</span>
                         </td>
                     </tr>
                     <tr><th>중도상환수수료</th><td><strong>없음</strong></td></tr>
                     <tr>
                         <th style="border-bottom: 1px solid #e2e8f0;">기타 유의사항</th>
                         <td style="font-size: 11.5px; line-height: 1.6; color: #64748b; border-bottom: 1px solid #e2e8f0;">
-                            - 계약 체결 전 상품설명서 및 약관을 확인하시기 바랍니다.<br>
-                            - 해당 상품에 대해 충분한 사전 설명을 받을 권리가 있으며, 설명을 이해한 후 거래하시기 바랍니다.<br>
-                            - 저축은행 심사기준과 고객신용도에 따라 대출여부가 결정됩니다.<br>
-                            - 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.<br>
-                            - 개인신용평점 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.<br>
-                            - 기타 자세한 내용은 1544-8811로 문의하시거나 대출상품설명서를 참조하시기 바랍니다.
+                            • 계약 체결 전 상품설명서 및 약관을 확인하시기 바랍니다.<br>
+                            • 해당 상품에 대해 충분한 사전 설명을 받을 권리가 있으며, 설명을 이해한 후 거래하시기 바랍니다.<br>
+                            • 저축은행 심사기준과 고객신용도에 따라 대출여부가 결정됩니다.<br>
+                            • 대출금리는 금융당국 기준금리 변동 또는 신용평점과 심사결과에 따라 변경될 수 있습니다.<br>
+                            • 기한 연장시점에 고객신용도 등의 변동이 있는 경우 대출금의 일부 또는 전부가 회수될 수 있습니다.<br>
+                            • 대출금의 상환 또는 이자납입이 지연된 경우 연체이율이 적용되며, 예금 등 기타 채권과의 상계나 법적절차등으로 재산상의 불이익을 당하실 수 있습니다.<br>
+                            • 대출만기 경과 후 미상환시 대출잔액에 대한 연체이자 납부, 연체등 금융질서문란정보등록등의 불이익을 받으실 수 있습니다.<br>
+                            • 연체 시 계약기한 만료 전 원리금 변제 의무가 발생할 수 있습니다.<br>
+                            • 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.<br>
+                            • 개인신용평점 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.<br>
+                            • 기타 자세한 내용은 1544-8811로 문의하시거나 대출상품설명서를 참조하시기 바랍니다.
                         </td>
                     </tr>
                     <tr>
-                        <th style="background:#f8fafc; font-weight:800; color:#1e293b; border-bottom: 1px solid #e2e8f0;">심의필번호</th>
+                        <th style="background:#f8fafc; font-weight:800; color:#1e293b; border-bottom: 1px solid #e2e8f0;">심의필 번호</th>
                         <td style="color: #475569; font-weight: 700; font-size: 12.5px; border-bottom: 1px solid #e2e8f0; text-align: left;">동원제일저축은행 준법감시인 심의필 제2026-083호(2026.08.25~2027.08.24)</td>
                     </tr>
                 </tbody>
@@ -1141,7 +1158,7 @@
         </div>
     </div>
 
-    <!-- [모달 5] 판매대리 등록증 팝업 실물 이미지 -->
+    <!-- [모달 4] 판매대리 등록증 팝업 실물 이미지 -->
     <div id="registrationModal" class="modal-overlay-bp" onclick="handleOverlayClick(event, 'registrationModal')">
         <div class="modal-body-bp" style="max-width: 500px; padding: 22px 18px;">
             <div class="flex justify-end mb-2 pb-1 border-b">
