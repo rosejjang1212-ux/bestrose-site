@@ -198,7 +198,7 @@
             box-shadow: 0 6px 18px rgba(0, 82, 255, 0.35);
         }
 
-        /* [4. 본문 및 상담사 프로필 카드 - 완벽한 시각적 균형 설계] */
+        /* [4. 본문 및 상담사 프로필 카드] */
         .content-body {
             margin-top: 114px;
         }
@@ -1077,53 +1077,6 @@
         </div>
     </div>
 
-    <!-- [모달 3] 아파트 담보대출 상세 안내 팝업 -->
-    <div id="aptDetailModal" class="modal-overlay-bp" onclick="handleOverlayClick(event, 'aptDetailModal')">
-        <div class="modal-body-bp">
-            <div class="flex justify-between items-center mb-5 border-b pb-3 text-left">
-                <div class="flex items-center gap-2">
-                    <span class="p-label gold !mb-0">PREMIUM MORTGAGE</span>
-                    <h3 style="font-size:21px; font-weight:900; color:#0f172a;">아파트 담보대출 상세 안내</h3>
-                </div>
-                <button onclick="closeModal('aptDetailModal')" style="font-size:24px; color:#94a3b8;"><i class="fas fa-times"></i></button>
-            </div>
-            <table class="spec-table-master">
-                <tbody>
-                    <tr>
-                        <th>신청대상</th>
-                        <td>
-                            본인 또는 공동명의 아파트를 소유한 고객 (직장인, 사업자, 주부 등)<br>
-                            KB부동산 시세 조회가 가능한 전국 아파트 대상
-                        </td>
-                    </tr>
-                    <tr><th>대출한도</th><td>KB시세 최대 LTV 90% 이내 (선순위 및 후순위 가능)</td></tr>
-                    <tr><th>대출기간</th><td>최대 30년 (고객 상황에 따른 맞춤 플랜 제공)</td></tr>
-                    <tr><th>상환방식</th><td>원리금균등분할상환 또는 만기일시상환</td></tr>
-                    <tr><th>대출금리</th><td><strong>연 5.00% ~</strong> (신용도 및 담보 평가에 따라 차등 적용)</td></tr>
-                    <tr><th>연체금리</th><td>약정 대출금리 + 연 3%p (최고 연 20% 이내)</td></tr>
-                    <tr><th>준비서류</th><td>등본, 초본, 인감증명서, 신분증, 등기권리증, 소득증빙서류 등</td></tr>
-                    <tr>
-                        <th>부대비용</th>
-                        <td>인지세 (50% 고객 부담), 국민주택채권 매입비용, 감정평가비 등</td>
-                    </tr>
-                    <tr>
-                        <th style="border-bottom: 1px solid #e2e8f0;">기타 유의사항</th>
-                        <td style="font-size: 11.5px; line-height: 1.6; color: #64748b; border-bottom: 1px solid #e2e8f0;">
-                            - 담보 물건의 권리 관계 및 시세 평가에 따라 대출 가능 금액이 달라질 수 있습니다.<br>
-                            - 과도한 대출은 개인신용평점 하락의 제약 또는 불이익이 발생할 수 있습니다.<br>
-                            - 금융상품 체결 전 설명서 및 약관을 참조해 주시기 바랍니다.
-                        </td>
-                    </tr>
-                    <tr>
-                        <th style="background:#f8fafc; font-weight:800; color:#1e293b; border-bottom: 1px solid #e2e8f0;">심의필번호</th>
-                        <td style="color: #475569; font-weight: 700; font-size: 12.5px; border-bottom: 1px solid #e2e8f0; text-align: left;">동원제일저축은행 준법감시인 심의필 제2026-083호(2026.08.25~2027.08.24)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button onclick="closeModal('aptDetailModal')" style="width:100%; padding:16px; background:#1e293b; color:white; border:none; border-radius:14px; font-weight:700; font-size:15px; cursor:pointer; margin-top:18px;">내용 확인 완료</button>
-        </div>
-    </div>
-
     <!-- [모달 4] 햇살론 일반보증 상품상세 팝업 (심의필 제2026-083호) -->
     <div id="sunshineDetailModal" class="modal-overlay-bp" onclick="handleOverlayClick(event, 'sunshineDetailModal')">
         <div class="modal-body-bp">
@@ -1208,7 +1161,7 @@
 
     <main class="content-body">
         
-        <!-- [1] 상담사 정보 프로필 섹션 (제공 이미지 100% 반영) -->
+        <!-- [1] 상담사 정보 프로필 섹션 -->
         <section class="counselor-premium-section">
             <div class="bp-container" style="justify-content: center;">
                 <div class="vertical-master-wrapper">
@@ -1295,14 +1248,13 @@
                         </div>
                     </div>
 
-                    <!-- 상품 2: 내 집의 가치를 활용 / 아파트 담보대출 예약 -->
+                    <!-- 상품 2: 내 집의 가치를 활용 / 아파트 담보대출 예약 (상품안내 버튼 삭제 완료) -->
                     <div id="aptloan_reserve" class="prod-reserve-card" style="border-top: 5px solid #ca8a04;">
                         <div class="card-img-top"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="아파트 담보대출" class="color-zoom-img"></div>
                         <div class="card-body-reserve text-center">
                             <div class="w-full">
                                 <div class="flex items-center justify-center gap-2">
                                     <span class="p-label gold">PREMIUM MORTGAGE</span>
-                                    <button type="button" class="info-btn" onclick="openModal('aptDetailModal')"><i class="fas fa-info-circle"></i> 상품안내</button>
                                 </div>
                                 <h4 class="p-title-reserve"><span class="top-mention-heavy">내 집의 가치를 활용</span>아파트 담보대출 예약</h4>
                                 <div class="benefit-row-vertical-bp">
