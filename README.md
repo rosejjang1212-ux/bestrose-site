@@ -1,4 +1,3 @@
-[index.html](https://github.com/user-attachments/files/33094837/index.html)
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1044,7 +1043,7 @@
                     <tr>
                         <th>대출금리</th>
                         <td>
-                            <strong>연 14.06% ~ 연 19.90%</strong> (기준일자 : 2026.04.01.)<br>
+                            <strong>연 13.91% ~ 19.90%</strong> (기준일자 : 2026.10.01.)<br>
                             매월이자후취<br>
                             대출금리 = 기준금리 + 가산금리<br>
                             <span class="text-xs text-gray-500">
@@ -1288,7 +1287,7 @@
                                 <h4 class="p-title-reserve"><span class="top-mention-heavy">타던 차 그대로</span>동원오토론 1:1 상담</h4>
                                 <div class="benefit-row-vertical-bp">
                                     <div class="v-item-bp"><span>최대 한도</span><strong>8,000만원</strong></div>
-                                    <div class="v-item-bp"><strong class="blue-point">연 14.06% ~ 19.90%</strong></div>
+                                    <div class="v-item-bp"><strong class="blue-point">연 13.91% ~ 19.90%</strong></div>
                                 </div>
                             </div>
                             <a href="#apply_section" class="reserve-action-btn" style="background:#0052ff;">내차 한도 확인하기 <i class="fas fa-arrow-right ml-1"></i></a>
